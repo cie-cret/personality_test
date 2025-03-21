@@ -21,6 +21,7 @@ class _QuizState extends State<Quiz> {
   //   activePage = HomePage(switchPage);
   //   super.initState();
   // }
+
   List<String> selectedAns = [];
   var activePage = 'home-page';
 
@@ -48,6 +49,19 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  Widget get screenWidget {
+    if (activePage == 'home-page') {
+      return HomePage(switchPage);
+    } else if (activePage == 'quiz-page') {
+      return QuizPage(onSelectedAns: chosenAns);
+    } else {
+      return ResultPage(
+        chosenAnswers: selectedAns,
+        onRestart: restartQuiz,
+      );
+    }
+  }
+
   @override
   Widget build(context) {
     return MaterialApp(
@@ -61,14 +75,15 @@ class _QuizState extends State<Quiz> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: activePage == 'home-page'
-              ? HomePage(switchPage)
-              : activePage == 'quiz-page'
-                  ? QuizPage(onSelectedAns: chosenAns)
-                  : ResultPage(
-                      chosenAnswers: selectedAns,
-                      onRestart: restartQuiz,
-                    ),
+          child: screenWidget,
+          // child: activePage == 'home-page'
+          //     ? HomePage(switchPage)
+          //     : activePage == 'quiz-page'
+          //         ? QuizPage(onSelectedAns: chosenAns)
+          //         : ResultPage(
+          //             chosenAnswers: selectedAns,
+          //             onRestart: restartQuiz,
+          //           ),
         ),
       ),
     );

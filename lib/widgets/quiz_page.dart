@@ -22,7 +22,7 @@ class _QuizPageState extends State<QuizPage> {
   var currentQuestionIndex = 0;
 
   ansQuestion(String selectedAns) {
-    widget.onSelectedAns(selectedAns);
+    widget.onSelectedAns(selectedAns); // widget = access to parent widget
     setState(() {
       currentQuestionIndex++;
     });
