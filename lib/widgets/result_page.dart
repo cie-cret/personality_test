@@ -1,7 +1,7 @@
 import 'package:a1_quiz_app/data/questions.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:a1_quiz_app/questions_summary.dart';
+// import 'package:a1_quiz_app/widgets/questions_summary.dart';
 
 class ResultPage extends StatelessWidget {
   const ResultPage(
@@ -80,7 +80,7 @@ class ResultPage extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             scorePercentage >= 0.8
-                ? 'แกมันตัวแม่่ (แต่หน้าพ่อ)'
+                ? 'แกมันตัวแม่ (แต่หน้าพ่อ)'
                 : scorePercentage >= 0.5
                     ? 'ถ้ายังไม่เปิดตัว ก็เปิดซะนะ'
                     : 'คืนนี้ใจเกเร',
