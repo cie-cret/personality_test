@@ -11,7 +11,7 @@ class QuizQuestion {
   // }
 
   List<String> get shuffleAns {
-    final shuffledList = List.of(answers);
+    final shuffledList = List.of(answers); // copy a list of the answer
     shuffledList.shuffle();
     return shuffledList;
   }
