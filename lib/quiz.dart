@@ -44,7 +44,7 @@ class _QuizState extends State<Quiz> {
   void restartQuiz() {
     setState(() {
       selectedAns = [];
-      activePage = 'home-page';
+      activePage = 'quiz-page';
     });
   }
 

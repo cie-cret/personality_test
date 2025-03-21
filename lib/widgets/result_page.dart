@@ -9,7 +9,23 @@ class ResultPage extends StatelessWidget {
 
   final List<String> chosenAnswers;
 
-  List<Map<String, Object>> getSummaryData() {
+  // List<Map<String, Object>> getSummaryData() {
+  //   final List<Map<String, Object>> summary = [];
+
+  //   for (int i = 0; i < chosenAnswers.length; i++) {
+  //     summary.add({
+  //       'question_index': i,
+  //       'question': questions[i],
+  //       'correct_answer': questions[i].answers[0],
+  //       'user_answer': chosenAnswers[i],
+  //       'is_correct': chosenAnswers[i] == questions[i].answers[0],
+  //     });
+  //   }
+
+  //   return summary;
+  // }
+
+  List<Map<String, Object>> get summaryData {
     final List<Map<String, Object>> summary = [];
 
     for (int i = 0; i < chosenAnswers.length; i++) {
@@ -40,7 +56,7 @@ class ResultPage extends StatelessWidget {
 
   @override
   Widget build(context) {
-    final summaryData = getSummaryData();
+    // final summaryData = getSummaryData();
     final totalQuestions = questions.length;
     final correctAnswers = summaryData.where((data) {
       return data['correct_answer'] == data['user_answer'];
